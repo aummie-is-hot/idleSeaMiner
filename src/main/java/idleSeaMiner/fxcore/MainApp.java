@@ -19,7 +19,7 @@ public class MainApp extends Application {
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;
-        setRoot("primary","");
+        setRoot("MainMenu","Idle Sea Miner");
          player = new MediaPlayer((new Media(getClass().getResource("/backgroundmusic.mp3").toString())));
         player.setCycleCount(200000);
         player.setVolume(0.1);

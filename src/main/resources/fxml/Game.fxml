@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idleSeaMiner.fxcore.GameController">
+   <children>
+      <ImageView fitHeight="601.0" fitWidth="1017.0">
+         <image>
+            <Image url="@../base.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rctOreBay" arcHeight="5.0" arcWidth="5.0" fill="#0057a8" height="141.0" layoutX="674.0" layoutY="229.0" onMouseClicked="#rctOreBayClicked" onMouseEntered="#rctOreBayEnter" onMouseExited="#rctOreBayLeave" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="238.0" />
+      <Polygon fx:id="polyResearch" fill="DODGERBLUE" layoutX="419.0" layoutY="272.0" onMouseClicked="#polyResearchClicked" onMouseEntered="#polyResearchEntered" onMouseExited="#polyResearchExit" opacity="0.0" points="122.078125, 23.0, 85.078125, -51.0, 11.078125, -82.0, -33.921875, -67.0, -61.921875, -44.0, -80.921875, -15.0, -86.921875, 23.0, -86.921875, 95.0, 11.078125, 95.0, 122.078125, 95.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="polyRadio" fill="DODGERBLUE" layoutX="541.0" layoutY="200.0" onMouseClicked="#polyRadioClicked" onMouseEntered="#polyRadioEntered" onMouseExited="#polyRadioExit" opacity="0.0" points="-69.921875, -7.0, -10.921875, 49.0, 53.078125, 55.0, 53.078125, 34.0, 53.078125, -53.0, -10.921875, -53.0, -69.921875, -53.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="lblOreBay" layoutX="686.0" layoutY="183.0" prefHeight="47.0" prefWidth="218.0" text="Ore Bay Click to Enter" textFill="WHITE" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblResearchBay" layoutX="199.0" layoutY="160.0" prefHeight="47.0" prefWidth="272.0" text="Research Bay Click to Enter" textFill="WHITE" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRadioStation" layoutX="311.0" layoutY="100.0" prefHeight="47.0" prefWidth="272.0" text="Radio Station Click To Enter" textFill="WHITE" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

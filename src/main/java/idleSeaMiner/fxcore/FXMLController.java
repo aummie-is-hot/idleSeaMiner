@@ -1,9 +1,9 @@
 
 package idleSeaMiner.fxcore;
 /*
-By: <Your Name Here>
+By: <Aum Markandey>
 Date: 2025-12-13
-Program Details: <Program Description Here>
+Program Details: Idle Sea Mining game similar to cookie clicker where your a base manager for an underwater mineing facillty
 */
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,7 +62,11 @@ public class FXMLController implements Initializable {
 
     @FXML
     void btnStartA(ActionEvent event) {
-        
+        try {
+            MainApp.setRoot("Game","Idle Sea Miner");
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }   
     
     @Override
