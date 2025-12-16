@@ -16,6 +16,9 @@ import java.io.IOException;
 public class MainApp extends Application {
     private static Stage stage;
     MediaPlayer player;
+    static double iron = 0;
+    static double quartz = 0;
+    static double copper = 0;
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;

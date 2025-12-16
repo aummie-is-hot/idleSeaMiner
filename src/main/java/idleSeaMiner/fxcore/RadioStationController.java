@@ -19,7 +19,7 @@ import javafx.scene.media.MediaView;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 
-public class GameController implements Initializable {
+public class RadioStationController implements Initializable {
     
     @FXML
     private Label lblOreBay;
@@ -41,11 +41,7 @@ public class GameController implements Initializable {
     // make it so when you buy drones it and you type how many drones you want if its greated than the amount they can buy it auto sets the amount to the number they can buy
     @FXML
     void polyRadioClicked(MouseEvent event) {
-         try {
-            MainApp.setRoot("RadioStation");
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+
     }
 
     @FXML
@@ -60,11 +56,7 @@ public class GameController implements Initializable {
 
     @FXML
     void polyResearchClicked(MouseEvent event) {
-        try {
-            MainApp.setRoot("ResearchBay");
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+
     }
 
     @FXML
@@ -79,11 +71,7 @@ public class GameController implements Initializable {
 
     @FXML
     void rctOreBayClicked(MouseEvent event) {
-         try {
-            MainApp.setRoot("OreBay");
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+
     }
 
     @FXML

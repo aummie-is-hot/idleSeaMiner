@@ -74,7 +74,7 @@ public class FXMLController implements Initializable {
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         background.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
-
+        
     }    
 }
 
