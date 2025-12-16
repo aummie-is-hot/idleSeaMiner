@@ -81,6 +81,12 @@ public class OrebayController implements Initializable {
             if(oreselected == 1 ){
                 iron = iron-10;
             }
+            if(oreselected == 2 ){
+                copper = copper-10;
+            }
+            if(oreselected == 3 ){
+                quartz = quartz-10;
+            }
         }
     }
 
@@ -94,6 +100,12 @@ public class OrebayController implements Initializable {
         String ore = source.getText();
         if (source == lblIron){
              oreselected=1;
+        }
+         if (source == lblCopper){
+             oreselected=2;
+        }
+         if (source == lblQuartz){
+             oreselected=3;
         }
        
     }
