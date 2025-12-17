@@ -72,11 +72,12 @@ public class OrebayController implements Initializable {
     }
     @FXML
     void BtnConvertA(ActionEvent event) {
-
+//
     }
 
     @FXML
     void BtnDumpA(ActionEvent event) {
+        // dumping the ore according to the oreselected value
         if(btnDump.isVisible()){
             if(oreselected == 1 ){
                 iron = iron-10;
@@ -97,7 +98,7 @@ public class OrebayController implements Initializable {
         btnDump.setVisible(true);
         btnConvert.setVisible(true);
         Label source= (Label) event.getSource();
-        String ore = source.getText();
+       // giving each one its own number coresponding to the ore when clicked
         if (source == lblIron){
              oreselected=1;
         }

@@ -19,6 +19,7 @@ public class MainApp extends Application {
     static double iron = 0;
     static double quartz = 0;
     static double copper = 0;
+    static double quota = 200;
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;

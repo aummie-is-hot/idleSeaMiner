@@ -12,77 +12,68 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 public class RadioStationController implements Initializable {
     
-    @FXML
-    private Label lblOreBay;
+       @FXML
+    private Label lblClickToStart;
 
     @FXML
-    private Label lblRadioStation;
+    private Label lblScreen;
 
     @FXML
-    private Label lblResearchBay;
+    private Rectangle rctPowerButton;
 
     @FXML
-    private Polygon polyRadio;
+    private TextField txtField;
+
 
     @FXML
-    private Polygon polyResearch;
-
+    void MouseEntered(MouseEvent event) {
+        lblClickToStart.setVisible(true);
+    }
+       @FXML
+    void Enter(KeyEvent event) {
+        if(event.getCode() == KeyCode.ENTER){
+            String input = txtField.getText();
+             if (input.equals("Back")){
+                lblScreen.setText("Commands\nRequest\nDeadline\nQuota\nBack");
+                txtField.setText("");
+            }
+            if (input.equals("Request")){
+                lblScreen.setText("Type Item Ensure it is the exact name of item");
+                txtField.setText("");
+                
+            }
+            if (input.equals("Quota")){
+                lblScreen.setText("Quota is: "+MainApp.quota);
+                txtField.setText("");
+                 
+            }
+        }
+    }
     @FXML
-    private Rectangle rctOreBay;
-    // make it so when you buy drones it and you type how many drones you want if its greated than the amount they can buy it auto sets the amount to the number they can buy
-    @FXML
-    void polyRadioClicked(MouseEvent event) {
-
+    void MouseLeft(MouseEvent event) {
+        lblClickToStart.setVisible(false);
     }
 
     @FXML
-    void polyRadioEntered(MouseEvent event) {
-        lblRadioStation.setVisible(true);
+    void Start(MouseEvent event) {
+        txtField.setEditable(true);
+        txtField.setStyle("-fx-text-fill: #00FF00;"+"-fx-background-color: transparent;");
+        lblScreen.setText("Commands\nRequest\nDeadline\nQuota\nBack");
+        
     }
-
-    @FXML
-    void polyRadioExit(MouseEvent event) {
-        lblRadioStation.setVisible(false);
-    }
-
-    @FXML
-    void polyResearchClicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void polyResearchEntered(MouseEvent event) {
-        lblResearchBay.setVisible(true);
-    }
-
-    @FXML
-    void polyResearchExit(MouseEvent event) {
-         lblResearchBay.setVisible(false);
-    }
-
-    @FXML
-    void rctOreBayClicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void rctOreBayEnter(MouseEvent event) {
-         lblOreBay.setVisible(true);
-    }
-
-    @FXML
-    void rctOreBayLeave(MouseEvent event) {
-        lblOreBay.setVisible(false);
-    } 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
