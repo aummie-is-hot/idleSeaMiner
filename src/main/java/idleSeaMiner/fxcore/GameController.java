@@ -38,6 +38,7 @@ public class GameController implements Initializable {
 
     @FXML
     private Rectangle rctOreBay;
+    // add tutorial
     // make it so when you buy drones it and you type how many drones you want if its greated than the amount they can buy it auto sets the amount to the number they can buy
     @FXML
     void polyRadioClicked(MouseEvent event) {
