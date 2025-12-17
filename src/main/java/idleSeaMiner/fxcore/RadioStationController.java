@@ -56,7 +56,7 @@ public class RadioStationController implements Initializable {
                 
             }
             if (input.equals("Quota")){
-                lblScreen.setText("Quota is: "+MainApp.quota);
+                lblScreen.setText("Quota is: "+MainApp.quota+"\nYou have: $"+MainApp.oreworth+" worth of ore");
                 txtField.setText("");
                  
             }
