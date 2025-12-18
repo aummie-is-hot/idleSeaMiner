@@ -78,6 +78,7 @@ public class OrebayController implements Initializable {
     @FXML
     void BtnDumpA(ActionEvent event) {
         // dumping the ore according to the oreselected value
+        // add a slider to select the amount to dump
         if(btnDump.isVisible()){
             if(oreselected == 1 ){
                 iron = iron-10;
