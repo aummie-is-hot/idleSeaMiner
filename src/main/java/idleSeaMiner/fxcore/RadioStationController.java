@@ -36,8 +36,9 @@ public class RadioStationController implements Initializable {
 
     @FXML
     private TextField txtField;
-
-
+        @FXML
+    private Button btnBack;
+    boolean requestedScreen = false;
     @FXML
     void MouseEntered(MouseEvent event) {
         lblClickToStart.setVisible(true);
@@ -49,16 +50,29 @@ public class RadioStationController implements Initializable {
              if (input.equals("Back")){
                 lblScreen.setText("Commands\nRequest\nDeadline\nQuota\nBack");
                 txtField.setText("");
+                requestedScreen = false;
             }
             if (input.equals("Request")){
                 lblScreen.setText("Type Item Ensure it is the exact name of item");
                 txtField.setText("");
+                requestedScreen = true;
                 
             }
+            // add items to request and check if requested screen is on and they typed a item to request
             if (input.equals("Quota")){
                 lblScreen.setText("Quota is: "+MainApp.quota+"\nYou have: $"+MainApp.oreworth+" worth of ore");
                 txtField.setText("");
                  
+            }
+            if (input.equals("Deadline")){
+                lblScreen.setText("The Deadline is "+MainApp.deadline+" days away");
+                txtField.setText("");
+                 
+            }
+            else{
+                txtField.setText("");
+                //txtField.setPromptText("INVAILD COMMAND");
+               
             }
         }
     }
@@ -66,12 +80,19 @@ public class RadioStationController implements Initializable {
     void MouseLeft(MouseEvent event) {
         lblClickToStart.setVisible(false);
     }
-
+    @FXML
+    void btnBackA(ActionEvent event) {
+        try {
+            MainApp.setRoot("Game", "IDLE SEA MINER");
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
     @FXML
     void Start(MouseEvent event) {
         txtField.setEditable(true);
         txtField.setStyle("-fx-text-fill: #00FF00;"+"-fx-background-color: transparent;");
-        lblScreen.setText("Commands\nRequest\nDeadline\nQuota\nBack");
+        lblScreen.setText("Commands:\nRequest\nDeadline\nQuota\nBack");
         
     }
     

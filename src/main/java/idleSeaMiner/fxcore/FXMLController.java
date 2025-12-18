@@ -29,7 +29,7 @@ public class FXMLController implements Initializable {
     private Button btnStart;
 
 
-
+    // make a day counter and make it go down every second like 1 in game hour is 1 minute in real life. or even less
     @FXML
     private Label lblOut;
     Media media = new Media(getClass().getResource("/waterbackgroundmainmenu.mp4").toString());

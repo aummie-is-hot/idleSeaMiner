@@ -16,78 +16,155 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-
+import javafx.util.Duration;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 public class ResearchBayController implements Initializable {
     
-    @FXML
-    private Label lblOreBay;
+  @FXML
+    private Circle ResearchPoint1;
 
     @FXML
-    private Label lblRadioStation;
+    private Circle ResearchPoint111;
 
     @FXML
-    private Label lblResearchBay;
+    private Circle ResearchPoint1111;
 
     @FXML
-    private Polygon polyRadio;
+    private Circle ResearchPoint11111;
 
     @FXML
-    private Polygon polyResearch;
+    private Circle ResearchPoint111111;
 
     @FXML
-    private Rectangle rctOreBay;
-    // make it so when you buy drones it and you type how many drones you want if its greated than the amount they can buy it auto sets the amount to the number they can buy
-    @FXML
-    void polyRadioClicked(MouseEvent event) {
-
-    }
+    private Circle ResearchPoint111112;
 
     @FXML
-    void polyRadioEntered(MouseEvent event) {
-        lblRadioStation.setVisible(true);
-    }
+    private Circle ResearchPoint1111121;
 
     @FXML
-    void polyRadioExit(MouseEvent event) {
-        lblRadioStation.setVisible(false);
-    }
+    private Circle ResearchPoint1111122;
 
     @FXML
-    void polyResearchClicked(MouseEvent event) {
-
-    }
+    private Circle ResearchPoint1111123;
 
     @FXML
-    void polyResearchEntered(MouseEvent event) {
-        lblResearchBay.setVisible(true);
-    }
+    private Circle ResearchPoint1111124;
 
     @FXML
-    void polyResearchExit(MouseEvent event) {
-         lblResearchBay.setVisible(false);
-    }
+    private Circle ResearchPoint111113;
 
     @FXML
-    void rctOreBayClicked(MouseEvent event) {
-
-    }
+    private Circle ResearchPoint2;
 
     @FXML
-    void rctOreBayEnter(MouseEvent event) {
-         lblOreBay.setVisible(true);
-    }
+    private Circle ResearchPoint3;
 
     @FXML
-    void rctOreBayLeave(MouseEvent event) {
-        lblOreBay.setVisible(false);
-    } 
+    private Button btnBack;
+
+    @FXML
+    private Button btnSendDrones;
+
+    @FXML
+    private Label lblDrones;
+
+    @FXML
+    private Label lblMissionProgress;
+
+    @FXML
+    private Label lblResearchProgress;
+
+    @FXML
+    private Label lblResearchSpeed;
+
+    @FXML
+    private Label lblScientists;
     
+    Timeline timeline = new Timeline(new KeyFrame(Duration.millis(350), ae -> labelsetter()));
+    void labelsetter(){
+
+
+
+   
+  
+        lblResearchProgress.setText("Research Progress: "+MainApp.researchprogress);
+    lblResearchSpeed.setText("Research Speed: "+MainApp.researchspeed);
+    lblScientists.setText("Scientists: "+MainApp.scientists);
+    lblDrones.setText("Drones: "+MainApp.drones);
+   
+    if (MainApp.missionprogress>100){
+         lblMissionProgress.setText("Mission Progress: COMPLETE");
+    }
+    else{
+         lblMissionProgress.setText("Mission Progress: "+String.format("%.2f", MainApp.missionprogress) );
+    }
+    }
+    @FXML
+    void BranchExit(MouseEvent event) {
+
+    }
+
+
+    @FXML
+    void BranchHover1(MouseEvent event) {
+
+    }
+
+    @FXML
+    void BranchHover2(MouseEvent event) {
+
+    }
+
+    @FXML
+    void BranchHover3(MouseEvent event) {
+
+    }
+
+    @FXML
+    void ResearchClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void ResearchClicked1(MouseEvent event) {
+
+    }
+
+    @FXML
+    void ResearchClicked2(MouseEvent event) {
+
+    }
+
+    @FXML
+    void ResearchClicked3(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnBackA(ActionEvent event) {
+        try {
+            MainApp.setRoot("Game","IDLE SEA MINER");
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
+    @FXML
+    void btnSendDronesA(ActionEvent event) {
+        MainApp.mission = true;
+       
+    }
+    // add scientist count more scientists = faster research and things unlocked like you need a certain amount to research an item. ADD a tree. Put the research tree in a computer screen
+    // also add a hire scientist button or do it in the termial radio station request personel
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        timeline.setCycleCount(Timeline.INDEFINITE);
+timeline.play();
     
-
     }    
 }
 

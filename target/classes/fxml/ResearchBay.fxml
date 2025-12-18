@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idleSeaMiner.fxcore.ResearchBayController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1016.0" style="-fx-background-color: #071A2B;" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idleSeaMiner.fxcore.ResearchBayController">
    <children>
-      <Label layoutX="375.0" prefHeight="57.0" prefWidth="266.0" text="Research Bay">
+      <Label fx:id="lblScientists" layoutY="6.0" prefHeight="40.0" prefWidth="188.0" text="Scientists:" textFill="#e6f1ff">
          <font>
-            <Font size="41.0" />
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblResearchSpeed" layoutY="46.0" prefHeight="40.0" prefWidth="303.0" text="Research Speed:" textFill="#e6f1ff">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Circle fx:id="ResearchPoint1" fill="#e8f2ff00" layoutX="64.0" layoutY="294.0" onMouseClicked="#ResearchClicked1" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint2" fill="#e8f2ff00" layoutX="182.0" layoutY="294.0" onMouseClicked="#ResearchClicked2" onMouseEntered="#BranchHover2" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint3" fill="#e8f2ff00" layoutX="293.0" layoutY="294.0" onMouseClicked="#ResearchClicked3" onMouseEntered="#BranchHover3" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint111" fill="#e8f2ff00" layoutX="407.0" layoutY="294.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint1111" fill="#e8f2ff00" layoutX="508.0" layoutY="368.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint11111" fill="#e8f2ff00" layoutX="508.0" layoutY="294.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint111111" fill="#e8f2ff00" layoutX="508.0" layoutY="223.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint111112" fill="#e8f2ff00" layoutX="680.0" layoutY="463.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint111113" fill="#e8f2ff00" layoutX="585.0" layoutY="419.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint1111121" fill="#e8f2ff00" layoutX="693.0" layoutY="294.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint1111122" fill="#e8f2ff00" layoutX="602.0" layoutY="294.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint1111123" fill="#e8f2ff00" layoutX="579.0" layoutY="163.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fx:id="ResearchPoint1111124" fill="#e8f2ff00" layoutX="645.0" layoutY="103.0" onMouseClicked="#ResearchClicked" onMouseEntered="#BranchHover1" onMouseExited="#BranchExit" opacity="0.4" radius="30.0" stroke="#e6f1ff" strokeType="INSIDE" strokeWidth="5.0" />
+      <Button fx:id="btnBack" layoutX="900.0" mnemonicParsing="false" onAction="#btnBackA" prefHeight="60.0" prefWidth="116.0" style="-fx-background-color: transparent;" text="Back" textFill="#e6f1ff">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblResearchProgress" layoutX="1.0" layoutY="83.0" prefHeight="40.0" prefWidth="303.0" text="Research Progress:" textFill="#e6f1ff">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDrones" layoutX="1.0" layoutY="123.0" prefHeight="40.0" prefWidth="303.0" text="Drones: " textFill="#e6f1ff">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSendDrones" layoutX="592.0" layoutY="539.0" mnemonicParsing="false" onAction="#btnSendDronesA" prefHeight="61.0" prefWidth="424.0" style="-fx-background-color: transparent;" text="Send Drones For Mission" textFill="#e6f1ff">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblMissionProgress" layoutX="1.0" layoutY="163.0" prefHeight="40.0" prefWidth="441.0" text="Mission Progress:" textFill="#e6f1ff">
+         <font>
+            <Font size="28.0" />
          </font>
       </Label>
    </children>
