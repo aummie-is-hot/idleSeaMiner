@@ -43,20 +43,51 @@ public class RadioStationController implements Initializable {
     void MouseEntered(MouseEvent event) {
         lblClickToStart.setVisible(true);
     }
+    boolean dronescreen = false;
        @FXML
     void Enter(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER){
             String input = txtField.getText();
              if (input.equals("Back")){
-                lblScreen.setText("Commands\nRequest\nDeadline\nQuota\nBack");
+                lblScreen.setText("Money: "+ MainApp.money+"\nCommands:\nRequest\nDeadline\nQuota\nBack");
                 txtField.setText("");
                 requestedScreen = false;
             }
             if (input.equals("Request")){
-                lblScreen.setText("Type Item Ensure it is the exact name of item");
+                lblScreen.setText("Type Item Ensure it is the exact name of item type HELP for list of items requestable");
                 txtField.setText("");
                 requestedScreen = true;
                 
+            }
+            if (requestedScreen){
+                if (input.equals("HELP")){
+                    lblScreen.setText("Money\nScientists\nDrones");
+                    txtField.setText("");
+                }
+                if (input.equals("Drones")){
+                     lblScreen.setText("Money "+MainApp.money+"\nSimple Drone  - $20\n Advanced Drone  - $100");
+                     
+
+                     // advanced drones required to add tech to it like sonar blasts and dynamite
+                     
+                }
+                if(input.equals("Simple Drone")){
+                    lblScreen.setText("Input Number Of Drones");
+                    txtField.setText("");
+                    dronescreen = true;
+                    
+                   
+                }
+                if (dronescreen){
+                    int num = Integer.parseInt(txtField.getText());
+                       if (MainApp.money>num*20) {
+                        
+                        MainApp.money= MainApp.money-num*20;
+                        MainApp.drones = MainApp.drones +num;
+                        lblScreen.setText("Money "+MainApp.money+"\nSimple Drone - $20\n Advanced Drone - $100");
+                        dronescreen = false;
+                    }  
+                }
             }
             // add items to request and check if requested screen is on and they typed a item to request
             if (input.equals("Quota")){
@@ -92,7 +123,7 @@ public class RadioStationController implements Initializable {
     void Start(MouseEvent event) {
         txtField.setEditable(true);
         txtField.setStyle("-fx-text-fill: #00FF00;"+"-fx-background-color: transparent;");
-        lblScreen.setText("Commands:\nRequest\nDeadline\nQuota\nBack");
+        lblScreen.setText("Money: "+MainApp.money+"\nCommands:\nRequest\nDeadline\nQuota\nBack");
         
     }
     

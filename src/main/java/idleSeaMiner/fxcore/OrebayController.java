@@ -66,9 +66,10 @@ public class OrebayController implements Initializable {
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), ae -> labelsetter()));
 
     void labelsetter(){
-            lblCopper.setText("Copper: "+copper);
-    lblQuartz.setText("Quartz: "+quartz);
-    lblIron.setText("Iron: "+iron);
+            lblCopper.setText("Copper: "+String.format("%.2f", copper));
+    lblQuartz.setText("Quartz: "+String.format("%.2f", quartz));
+    lblIron.setText("Iron: "+String.format("%.2f", iron));
+      
     }
     @FXML
     void BtnConvertA(ActionEvent event) {

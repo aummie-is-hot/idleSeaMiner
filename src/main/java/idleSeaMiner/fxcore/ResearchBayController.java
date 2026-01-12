@@ -111,7 +111,8 @@ public class ResearchBayController implements Initializable {
 
     @FXML
     void BranchHover1(MouseEvent event) {
-
+        // add hover effect and sound effect when hovering over
+        
     }
 
     @FXML
@@ -147,7 +148,13 @@ public class ResearchBayController implements Initializable {
     @FXML
     void btnBackA(ActionEvent event) {
         try {
+            if (MainApp.missionprogress>0){
+                
+            }
+            else{
+                btnBack.setDisable(false);
             MainApp.setRoot("Game","IDLE SEA MINER");
+            }
         } catch (Exception e) {
             // TODO: handle exception
         }

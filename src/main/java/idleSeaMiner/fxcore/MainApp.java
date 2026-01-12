@@ -23,13 +23,13 @@ public class MainApp extends Application {
     static double quartz = 0;
     static double copper = 0;
     static double quota = 200;
-    static double money = 150;
+    static double money = 100000000;
     static double oreworth = 0;
     static double deadline=5;
     static double researchspeed = 0.5;
     static double researchprogress = 0;
     static double scientists = 1;
-    static double drones = 2;
+    static int drones = 2;
     static double missionprogress = 0;
     static boolean mission = false;
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(350), ae -> mission()));
@@ -42,7 +42,7 @@ missionprogress = missionprogress+rand;
          if (mission == true){
             timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-        System.out.println("HELLOOO");
+
                
         }
         if(missionprogress >=100){
@@ -51,9 +51,10 @@ missionprogress = missionprogress+rand;
             missionprogress=0;
            
         // add random drones breaking or repair needed also add time so the days go down Make the timer in the game.fxml
-            iron += ThreadLocalRandom.current().nextInt(0,10+1);
-            quartz+= ThreadLocalRandom.current().nextInt(0,3+1);
-            copper+=copper+ThreadLocalRandom.current().nextInt(0,6+1);
+        // random multipliers
+            iron += ThreadLocalRandom.current().nextDouble(0,(drones*1.5)+5);
+            quartz+= ThreadLocalRandom.current().nextDouble(0,(drones*1.2)+3);
+            copper+=ThreadLocalRandom.current().nextDouble(0,(drones*1.6)+6);
         }
     }
     @Override
