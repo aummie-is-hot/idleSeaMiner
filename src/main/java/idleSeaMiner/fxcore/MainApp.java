@@ -23,7 +23,7 @@ public class MainApp extends Application {
     static double quartz = 0;
     static double copper = 0;
     static double quota = 200;
-    static double money = 100000000;
+    static double money = 150;
     static double oreworth = 0;
     static double deadline=5;
     static double researchspeed = 0.5;
@@ -32,6 +32,8 @@ public class MainApp extends Application {
     static int drones = 2;
     static double missionprogress = 0;
     static boolean mission = false;
+    static int missioncount = 0;
+     static double totalmoney;
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(350), ae -> mission()));
     Timeline missioncheckertTimeline = new Timeline(new KeyFrame(Duration.millis(350), ae -> missionchecker()));
     void mission(){
@@ -39,6 +41,15 @@ Double rand = ThreadLocalRandom.current().nextDouble(0.1,5+1);
 missionprogress = missionprogress+rand;
     }
      void missionchecker(){
+        if(missioncount==3){
+            deadline-=1;
+        }
+        totalmoney = money+copper+iron+quartz;
+        if (totalmoney>=quota){
+            deadline=5;
+            
+        }
+
          if (mission == true){
             timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();

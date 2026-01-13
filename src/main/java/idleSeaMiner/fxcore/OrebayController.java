@@ -66,14 +66,14 @@ public class OrebayController implements Initializable {
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), ae -> labelsetter()));
 
     void labelsetter(){
-            lblCopper.setText("Copper: "+String.format("%.2f", copper));
-    lblQuartz.setText("Quartz: "+String.format("%.2f", quartz));
-    lblIron.setText("Iron: "+String.format("%.2f", iron));
+            lblCopper.setText("Copper: $"+String.format("%.2f", copper));
+    lblQuartz.setText("Quartz: $"+String.format("%.2f", quartz));
+    lblIron.setText("Iron: $"+String.format("%.2f", iron));
       
     }
     @FXML
     void BtnConvertA(ActionEvent event) {
-//
+// convert to alloy
     }
 
     @FXML
@@ -82,13 +82,22 @@ public class OrebayController implements Initializable {
         // add a slider to select the amount to dump
         if(btnDump.isVisible()){
             if(oreselected == 1 ){
+                if(iron>=10){
+
                 iron = iron-10;
+                }
             }
             if(oreselected == 2 ){
+                if (copper>=10){
+
                 copper = copper-10;
+                }
             }
             if(oreselected == 3 ){
+                if (quartz>=10){
+
                 quartz = quartz-10;
+                }
             }
         }
     }

@@ -89,7 +89,7 @@ public class ResearchBayController implements Initializable {
 
 
 
-   
+        
   
         lblResearchProgress.setText("Research Progress: "+MainApp.researchprogress);
     lblResearchSpeed.setText("Research Speed: "+MainApp.researchspeed);
@@ -98,6 +98,7 @@ public class ResearchBayController implements Initializable {
    
     if (MainApp.missionprogress>100){
          lblMissionProgress.setText("Mission Progress: COMPLETE");
+         btnBack.setDisable(false);
     }
     else{
          lblMissionProgress.setText("Mission Progress: "+String.format("%.2f", MainApp.missionprogress) );
@@ -159,12 +160,14 @@ public class ResearchBayController implements Initializable {
             // TODO: handle exception
         }
     }
-
-    @FXML
+     @FXML
     void btnSendDronesA(ActionEvent event) {
         MainApp.mission = true;
+        MainApp.missioncount += 1;
+        btnSendDrones.setDisable(true);
        
     }
+   
     // add scientist count more scientists = faster research and things unlocked like you need a certain amount to research an item. ADD a tree. Put the research tree in a computer screen
     // also add a hire scientist button or do it in the termial radio station request personel
     @Override
